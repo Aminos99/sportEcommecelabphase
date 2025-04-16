@@ -15,7 +15,7 @@ function HomePage() {
   useEffect(() => {
     const fetchNewestProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products/newest');
+        const res = await axios.get(`${process.env.LINK_URL}/api/products/newest`);
         setProducts(res.data.products);
         console.log(res.data.products)
       } catch (err) {

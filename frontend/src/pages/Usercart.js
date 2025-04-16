@@ -18,7 +18,7 @@ function Usercart() {
         }
   
         try {
-          const response = await axios.get('http://localhost:5000/api/products/getCart', {
+          const response = await axios.get(`${process.env.LINK_URL}/api/products/getCart`, {
             headers: {
               Authorization: `Bearer ${token}`, // Send JWT token in the Authorization header
             },
@@ -41,7 +41,7 @@ function Usercart() {
       const token = localStorage.getItem('authToken'); // Get the auth token from localStorage
       if (!token) return;
   
-      axios.delete(`http://localhost:5000/api/products/removeFromCart/${productId}`, {
+      axios.delete(`${process.env.LINK_URL}/api/products/removeFromCart/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Send JWT token in the Authorization header
         },

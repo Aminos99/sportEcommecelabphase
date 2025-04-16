@@ -17,7 +17,7 @@ function Displayorders() {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/orders/getOrders', {
+        const response = await axios.get(`${process.env.LINK_URL}/api/orders/getOrders`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -36,7 +36,7 @@ function ProductManager() {
     useEffect(()=>{
         const getAllproducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/products/')
+                const response = await axios.get(`${process.env.LINK_URL}/api/products/`)
                 console.log(response.data)
                 setProducts(response.data)
             } catch (error) {
@@ -53,7 +53,7 @@ function ProductManager() {
         }
         console.log("Image URL: ", selectedImage); 
         try {
-          const response = await axios.post('http://localhost:5000/api/products/addProduct', {
+          const response = await axios.post(`${process.env.LINK_URL}/api/products/addProduct`, {
             name,
             description,
             price,
@@ -76,7 +76,7 @@ function ProductManager() {
         e.preventDefault();
     
         try {
-          const res = await axios.put(`http://localhost:5000/api/products/${editingProductId}`, {
+          const res = await axios.put(`${process.env.LINK_URL}/api/products/${editingProductId}`, {
             name,
             description,
             price,
@@ -108,7 +108,7 @@ function ProductManager() {
         }
       
         try {
-          await axios.delete('http://localhost:5000/api/products/delete', {
+          await axios.delete(`${process.env.LINK_URL}/api/products/delete`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

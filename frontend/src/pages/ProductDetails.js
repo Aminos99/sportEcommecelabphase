@@ -12,7 +12,7 @@ function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`${process.env.LINK_URL}/api/products/${id}`);
         setProduct(response.data.product);
         setLoading(false);
       } catch (err) {
@@ -55,7 +55,7 @@ function ProductDetails() {
   
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/products/addToCart',
+        `${process.env.LINK_URL}/api/products/addToCart`,
         {
           productId: id,    // The product's ID
           quantity: quantity, // The quantity selected
