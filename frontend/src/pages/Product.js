@@ -29,7 +29,7 @@ function Product() {
       params.append("search", searchTerm.trim());
     }
   
-    const url = `${process.env.LINK_URL}/api/products?${params.toString()}`;
+    const url = `${process.env.REACT_APP_LINK_URL}/api/products?${params.toString()}`;
   
     try {
       const response = await axios.get(url);

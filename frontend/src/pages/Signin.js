@@ -11,7 +11,7 @@ function Signin() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${process.env.LINK_URL}/api/user/login`, {
+      const response = await axios.post(`${process.env.REACT_APP_LINK_URL}/api/user/login`, {
         email,
         password,
       });

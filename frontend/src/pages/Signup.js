@@ -10,7 +10,7 @@ function Signup() {
   const addUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.LINK_URL}/api/user/adduser`, {
+      const response = await axios.post(`${process.env.REACT_APP_LINK_URL}/api/user/adduser`, {
         Name,
         email,
         password

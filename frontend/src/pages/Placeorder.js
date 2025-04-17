@@ -26,7 +26,7 @@ function Placeorder() {
       }
 
       try {
-        const response = await axios.get(`${process.env.LINK_URL}/api/products/getCart`, {
+        const response = await axios.get(`${process.env.REACT_APP_LINK_URL}/api/products/getCart`, {
           headers: {
             Authorization: `Bearer ${token}`, // Send JWT token in the Authorization header
           },
@@ -78,7 +78,7 @@ function Placeorder() {
 
     try {
       const response = await axios.post(
-        `${process.env.LINK_URL}/api/orders/create`,
+        `${process.env.REACT_APP_LINK_URL}/api/orders/create`,
         orderData,
         {
           headers: {
